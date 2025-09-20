@@ -5,7 +5,7 @@ const fs = require('fs');
 const path = require('path');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 
 // In-memory storage for uptime data
 let monitors = [];
@@ -210,7 +210,21 @@ app.get('/', (req, res) => {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Uptime Monitor Status</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Space Grotesk', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
     <script>
         async function updateHealthBar(monitorId) {
             try {
@@ -224,7 +238,7 @@ app.get('/', (req, res) => {
                     
                     healthBarContainer.innerHTML = recentHistory.map(entry => \`
                         <div class="flex-1 h-full \${entry.status === 'up' ? 'bg-green-500' : 'bg-red-500'}" 
-                             title="\${entry.status === 'up' ? 'Up' : 'Down'} - \${new Date(entry.timestamp).toLocaleString()} (\${entry.responseTime}ms)">
+                            title="\${entry.status === 'up' ? 'Up' : 'Down'} - \{new Date(entry.timestamp).toLocaleString()} (\${entry.responseTime}ms)">
                         </div>
                     \`).join('');
                     
@@ -306,7 +320,7 @@ app.get('/', (req, res) => {
                     
                     healthBarContainer.innerHTML = recentHistory.map(entry => \`
                         <div class="flex-1 h-full \${entry.status === 'up' ? 'bg-green-500' : 'bg-red-500'}" 
-                             title="\${entry.status === 'up' ? 'Up' : 'Down'} - \${new Date(entry.timestamp).toLocaleString()}">
+                            title="\${entry.status === 'up' ? 'Up' : 'Down'} - \${new Date(entry.timestamp).toLocaleString()}">
                         </div>
                     \`).join('');
                     
@@ -363,7 +377,21 @@ app.get('/iframe', (req, res) => {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Uptime Status - Embed</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Space Grotesk', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
     <script>
         async function updateStatus() {
             try {
