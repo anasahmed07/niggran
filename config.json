@@ -3,7 +3,7 @@
     {
       "id": "dashboard",
       "name": "Dashboard",
-      "url": "https://mueed.xyz",
+      "url": "https://boost-dashboard.com",
       "interval": "*/5 * * * *"
     },
     {
@@ -21,7 +21,7 @@
     {
       "id": "uptime-monitor",
       "name": "Uptime Monitor",
-      "url": "/",
+      "url": "https://status.boost-dashboard.com",
       "interval": "*/10 * * * *"
     }
   ]
