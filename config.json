@@ -17,6 +17,12 @@
       "name": "OpenAI API",
       "url": "https://status.openai.com/api/v2/summary.json",
       "interval": "*/10 * * * *"
+    },
+    {
+      "id": "uptime-monitor",
+      "name": "Uptime Monitor",
+      "url": "/",
+      "interval": "*/10 * * * *"
     }
   ]
 }
