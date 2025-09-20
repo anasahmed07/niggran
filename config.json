@@ -1,0 +1,22 @@
+{
+  "monitors": [
+    {
+      "id": "dashboard",
+      "name": "Dashboard",
+      "url": "https://mueed.xyz",
+      "interval": "*/5 * * * *"
+    },
+    {
+      "id": "backend-server",
+      "name": "Backend Server",
+      "url": "http://api.boost-dashboard.com/ping",
+      "interval": "*/2 * * * *"
+    },
+    {
+      "id": "openai-api",
+      "name": "OpenAI API",
+      "url": "https://status.openai.com/api/v2/summary.json",
+      "interval": "*/10 * * * *"
+    }
+  ]
+}
